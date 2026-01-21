@@ -224,10 +224,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 [![Instagram](https://img.shields.io/badge/@qqsju-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/qqsju)
 [![Instagram](https://img.shields.io/badge/@_1zjz-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/_1zjz)
-
-<p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="30" alt="Instagram">
-  <strong>تابعوني على الانستقرام | Follow Me on Instagram</strong>
-</p>
-
 </div>
