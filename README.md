@@ -137,7 +137,6 @@ The application uses **MediaPipe** and **OpenCV** to analyze your webcam feed in
 - **محفز الفم**: افتح فمك 3 مرات بسرعة (سترى رسائل تصحيح في الكونسول)
 
 ---
-
 ## 🎬 Demo
 
 ### Expression Detection
