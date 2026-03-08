@@ -192,7 +192,7 @@ pygame
 </p>
 
 <p>
-  <a href="https://instagram.com/qqsju">
+  <a href="https://instagram.com/pj.cy">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="40" alt="Instagram">
   </a>
 </p>
