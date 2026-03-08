@@ -175,6 +175,7 @@ pygame
 <div align="center">
 
 ### 👨‍💻 Made By Me | صُنع بواسطتي
+### و عبدالله
 
 <p>
   <strong>تابعوني على حساباتي | Follow Me On My Accounts</strong>
