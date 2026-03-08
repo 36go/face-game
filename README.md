@@ -181,12 +181,12 @@ pygame
 </p>
 
 <p>
-  <a href="https://instagram.com/qqsju">
-    <img src="https://img.shields.io/badge/Instagram-@qqsju-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram qqsju">
+  <a href="https://instagram.com/pj.cy">
+    <img src="https://img.shields.io/badge/Instagram-@pj.cy-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram pj.cy">
   </a>
   <br>
-  <a href="https://instagram.com/_1zjz">
-    <img src="https://img.shields.io/badge/Instagram-@__1zjz-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram _1zjz">
+  <a href="https://instagram.com/bqq7k">
+    <img src="https://img.shields.io/badge/Instagram-@bqq7k-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram bqq7k">
   </a>
 </p>
 
@@ -220,6 +220,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Made with ❤️ by**
 
-[![Instagram](https://img.shields.io/badge/@qqsju-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/qqsju)
-[![Instagram](https://img.shields.io/badge/@_1zjz-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/_1zjz)
+[![Instagram](https://img.shields.io/badge/@pj.cy-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/[pj.cy])
+[![Instagram](https://img.shields.io/badge/@bqq7k-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/bqq7k)
 </div>
