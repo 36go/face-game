@@ -221,6 +221,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Made with ❤️ by**
 
-[![Instagram](https://img.shields.io/badge/@pj.cy-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/[pj.cy])
-[![Instagram](https://img.shields.io/badge/@bqq7k-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/bqq7k)
+[![Instagram](https://img.shields.io/badge/@pj.cy-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/[devguyjo])
 </div>
