@@ -1,0 +1,50 @@
+name: Python checks
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    defaults:
+      run:
+        working-directory: face-game
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: face-game/requirements*.txt
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Download verified MediaPipe models
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from model_assets import FACE_LANDMARKER_MODEL, HAND_LANDMARKER_MODEL, ensure_model_asset
+
+          model_dir = Path.cwd() / ".test-models"
+          ensure_model_asset(FACE_LANDMARKER_MODEL, model_dir=model_dir)
+          ensure_model_asset(HAND_LANDMARKER_MODEL, model_dir=model_dir)
+          PY
+          echo "FACE_GAME_TEST_MODEL_DIR=$PWD/.test-models" >> "$GITHUB_ENV"
+      - name: Verify
+        run: |
+          python -m pip check
+          python -m pip_audit -r requirements.txt
+          python -m compileall -q main.py model_assets.py tests
+          flake8 main.py model_assets.py tests --count --select=E9,F63,F7,F82 --show-source --statistics
+          pytest -q

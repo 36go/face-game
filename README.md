@@ -3,10 +3,10 @@
 # 🎭 Real-Time Expression & Gesture Detection
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3.10--3.12-blue.svg" alt="Python">
   <img src="https://img.shields.io/badge/OpenCV-4.5+-green.svg" alt="OpenCV">
-  <img src="https://img.shields.io/badge/MediaPipe-Latest-red.svg" alt="MediaPipe">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+  <img src="https://img.shields.io/badge/MediaPipe-1.0.0-red.svg" alt="MediaPipe">
+  <img src="https://img.shields.io/badge/License-Custom-yellow.svg" alt="Custom license">
 </p>
 
 <p align="center">
@@ -60,7 +60,7 @@ Open your mouth **3 times rapidly** within 2 seconds to:
 
 ### Prerequisites
 - 📹 Webcam
-- 💻 Python 3.8 or higher
+- 💻 Python 3.10 through 3.12
 - 🖥️ Recommended: Intel i7 11th gen or equivalent
 - 💾 Minimum 8GB RAM
 
@@ -69,10 +69,10 @@ Open your mouth **3 times rapidly** within 2 seconds to:
 ```bash
 # Clone the repository
 git clone https://github.com/36go/face-game.git
-cd face-game
+cd face-game/face-game
 
 # Install dependencies
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
 # Run the application
 python main.py
@@ -93,13 +93,28 @@ python main.py
 | `oi.gif` | Mouth trigger animation |
 | `sound.mp3` | Sound effect |
 
+### MediaPipe Models
+
+The app uses the supported MediaPipe Tasks `FaceLandmarker` and `HandLandmarker` APIs. On first run it downloads the versioned official Google model bundles into `%LOCALAPPDATA%\face-game\models` on Windows or `~/.cache/face-game/models` on Linux.
+
+Every cached and downloaded model is checked against its pinned byte length and SHA-256 before MediaPipe can load it. Downloads use temporary files and atomic replacement, so interrupted or modified downloads are never used.
+
+| Model | Cache filename | Official immutable-version URL | SHA-256 |
+|------|----------------|--------------------------------|---------|
+| Face Landmarker float16 v1 | `face_landmarker-float16-v1.task` | `https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task` | `64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff` |
+| Hand Landmarker float16 v1 | `hand_landmarker-float16-v1.task` | `https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task` | `fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1` |
+
+- Set `FACE_GAME_MODEL_DIR` to use a managed or pre-populated model directory.
+- Set `FACE_GAME_OFFLINE=1` to prohibit downloads. Missing or invalid files then produce an error containing the required URL, cache path, and SHA-256.
+- The models are official MediaPipe artifacts distributed by Google. MediaPipe is licensed under [Apache License 2.0](https://github.com/google-ai-edge/mediapipe/blob/master/LICENSE). The model files are cached locally and are not redistributed by this repository.
+
 ---
 
 ## 🎯 How It Works
 
 ### 🇬🇧 English
 
-The application uses **MediaPipe** and **OpenCV** to analyze your webcam feed in real-time:
+The application uses the **MediaPipe Tasks API** and **OpenCV** to analyze your webcam feed in real-time:
 
 1. **Face Detection**: The system detects your face and analyzes facial landmarks to determine your expression
 2. **Hand Tracking**: Recognizes hand positions and gestures using 21 hand landmarks
@@ -155,17 +170,18 @@ Open your mouth **3 times within 2 seconds** to play a sound and show a 4-second
 
 ### Performance Optimization
 - ⚡ Processes every frame for smooth video
-- 🎯 Uses MediaPipe's lightweight model (complexity=0)
+- 🎯 Uses pinned MediaPipe float16 Face and Hand Landmarker models
 - 👤 Maximum 1 face detection per frame
 - 📐 640x480 resolution for balanced quality and performance
 
 ### Dependencies
 ```txt
-opencv-python
-mediapipe
-pillow
-numpy
-pygame
+opencv-contrib-python==4.14.0.94
+mediapipe==1.0.0
+numpy==2.2.6
+Pillow==12.3.0
+protobuf==6.33.5
+pygame==2.6.1
 ```
 
 ---
@@ -203,7 +219,7 @@ pygame
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project uses the repository's custom attribution license. See `face-game/LICENSE` for its permissions, conditions, and limitations.
 
 ---
 
@@ -221,5 +237,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Made with ❤️ by**
 
-[![Instagram](https://img.shields.io/badge/@pj.cy-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/[devguyjo])
+[![Instagram](https://img.shields.io/badge/@pj.cy-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/pj.cy)
 </div>

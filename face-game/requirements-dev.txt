@@ -1,0 +1,6 @@
+-r requirements.txt
+
+flake8==7.3.0
+pip-audit==2.10.1
+pip==26.2.1
+pytest==9.1.1
